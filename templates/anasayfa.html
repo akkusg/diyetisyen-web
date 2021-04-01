@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Diyet Uzmanı</title>
+    <link rel="stylesheet" href="/static/gorsel.css">
+
+</head>
+<body>
+
+<h1>
+    <table>
+        <tr>
+            <td width="93%">
+                <span>Diyet Uzmanı</span>
+            </td>
+
+            <td>
+                <a href="https://wa.me/905555555555">
+                    <img width="40" src="/static/whatsapplogo.jpeg">
+                </a>
+            </td>
+            <td>
+                <a href="https://www.instagram.com/deneme/">
+                    <img width="40" src="/static/instalogo.jpeg">
+                </a>
+            </td>
+        </tr>
+    </table>
+</h1>
+
+<ul>
+    <li><a class="active" href="#anasayfa">Ana sayfa</a></li>
+    <li><a href="/hakkimizda">Hakkımızda</a></li>
+    <li><a href="/basarihikayeleri">Başarı Hikayeleri</a></li>
+    <li><a href="/urunler">Ürünler</a></li>
+    <li><a href="/iletisim">İletişim</a></li>
+</ul>
+
+<table width="100%">
+    <tr>
+        <td width="70%">Burası Carousel</td>
+        <td>
+
+            <h4>Vücut Kitle İndeksi</h4>
+            <div>
+                <form action="/hesapla" method="post">
+                <p>
+                    Boy: <input type="text" id="boy" name="boy">
+
+                <p>
+                    Kilo: <input type="text" id="kilo" name="kilo">
+                </p>
+                <p>
+                Cinsiyet:
+                <select id="cinsiyet" name="cinsiyet">
+                    <option value="K">Kadın</option>
+                    <option value="E">Erkek</option>
+                </select>
+                </p>
+                    <input type="submit" value="Hesapla">
+                </form>
+            </div>
+
+        </td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>
