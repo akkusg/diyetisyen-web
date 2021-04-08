@@ -24,10 +24,10 @@
     <li class="nav-item">
       <a class="nav-link" href="/">Ana sayfa</a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item">
       <a class="nav-link" href="/hakkimizda">Hakkımızda</a>
     </li>
-      <li class="nav-item">
+      <li class="nav-item active">
       <a class="nav-link" href="/iletisim">İletişim</a>
     </li>
     <li class="nav-item">
@@ -39,9 +39,25 @@
 
 </nav>
 
-  <h1>Hakkımızda</h1>
-  <p>Ekibimiz:</p>
-  <p>Kişiler kişiler kişiler</p>
+  <h1>Bize ulaşın</h1>
+    <form action="/mesajkaydet" method="post">
+    <div class="form-group">
+      <label for="adsoyad">Ad Soyad:</label>
+      <input type="text" class="form-control" id="adsoyad" name="adsoyad">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="mesaj">Mesajınız:</label>
+      <textarea class="form-control" rows="5" id="mesaj" name="mesaj"></textarea>
+    </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+
+
+
 </div>
 
 </body>

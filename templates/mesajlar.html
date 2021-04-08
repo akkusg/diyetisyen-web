@@ -24,13 +24,13 @@
     <li class="nav-item">
       <a class="nav-link" href="/">Ana sayfa</a>
     </li>
-    <li class="nav-item active">
+    <li class="nav-item">
       <a class="nav-link" href="/hakkimizda">Hakkımızda</a>
     </li>
       <li class="nav-item">
       <a class="nav-link" href="/iletisim">İletişim</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item active">
       <a class="nav-link" href="/mesajlar">Mesajlar</a>
     </li>
   </ul>
@@ -38,10 +38,22 @@
 
 
 </nav>
+    <h1>Mesajlar</h1>
 
-  <h1>Hakkımızda</h1>
-  <p>Ekibimiz:</p>
-  <p>Kişiler kişiler kişiler</p>
+      {%for mesaj in mesaj_listesi%}
+            <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">{{mesaj["adsoyad"]}}</h4>
+        <p class="card-text">{{mesaj["mesaj"]}}</p>
+        <a href="mailto:{{mesaj['email']}}" class="card-link">Cevap yaz</a>
+      </div>
+    </div>
+
+    {%endfor%}
+
+
+
+
 </div>
 
 </body>
