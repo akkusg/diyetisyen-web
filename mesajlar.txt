@@ -10,3 +10,4 @@ deneme 1234||deneme1234@aaa.com||d1234 d1234
 tek||tek@tek.com||tek
 GÖKAY BURAK AKKUŞ||akkusg@gmail.com||1 - 2 - 3 - 4
 GÖKAY BURAK AKKUŞ||akkusg@gmail.com||1 - 2 - 3 - 4 - 
+GÖKAY BURAK AKKUŞ||akkusg@gmail.com||3 - 4 - 5

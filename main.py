@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
@@ -37,7 +37,7 @@ def mesaj_kaydet():
     f = open("mesajlar.txt", "a")
     f.write(satir)
     f.close()
-    return mesajlar()
+    return redirect("/mesajlar", code=302)
     #return "Sayın " + adsoyad + ". Mesajınız için teşekkürler. Tüm mesajlar için tıklayın."
 
 @app.route('/mesajlar')
