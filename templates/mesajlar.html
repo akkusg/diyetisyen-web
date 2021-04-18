@@ -38,6 +38,37 @@
 
 <div class="container-fluid">
     <h1>Mesajlar</h1>
+
+
+  <ul class="list-group">
+    {%for mesaj in mesaj_listesi%}
+    <li class="list-group-item">
+      Ad Soyad: {{mesaj["adsoyad"]}} - Email: {{mesaj["email"]}} - Mesaj: {{mesaj["mesaj"]}}
+    </li>
+    {%endfor%}
+  </ul>
+
+    <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Ad Soyad</th>
+        <th>Email</th>
+        <th>Mesaj</th>
+      </tr>
+    </thead>
+    <tbody>
+    {%for mesaj in mesaj_listesi%}
+      <tr>
+        <td>{{mesaj["adsoyad"]}}</td>
+        <td>{{mesaj["email"]}}</td>
+        <td>{{mesaj["mesaj"]}}</td>
+      </tr>
+    {%endfor%}
+    </table>
+
+
+
+
     <div class="card-columns">
       {%for mesaj in mesaj_listesi%}
       <div class="card" style="width:400px">

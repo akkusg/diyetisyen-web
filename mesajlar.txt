@@ -4,3 +4,9 @@ Ahmet mehmet||ahmet@a.com||ahmet mesaj
 Diyetlerin Uzmanı||diyet@uzman.com||Muhteşem diyetleriniz için teşekkürler
 Zeynep Karaca||z.k@gmail.com||Zeynep'ten başarı dilekleri
 GÖKAY BURAK AKKUŞ||akkusg@gmail.com||deneme mesajı
+deneme deneme||deneme@deneme.com||deneme mesajı
+yeni kişi||akkusg@gmail.com||yeni bir mesaj çok uzun @multigoodverse see the first comment on the question for why you shouldn't send a password via a GET (in the URL). More generally, a GET request should have a ? at the beginning of the parameters, so you would want app.route('/?username=<username>&password=<password>'), but Flask will read everything after the question mark into request.args and won't interpret the variables from the route. If you wanted to get to your example route using an HTML form, you would need a bunch of extra JavaScript to make it work. Lastly, ro
+deneme 1234||deneme1234@aaa.com||d1234 d1234
+tek||tek@tek.com||tek
+GÖKAY BURAK AKKUŞ||akkusg@gmail.com||1 - 2 - 3 - 4
+GÖKAY BURAK AKKUŞ||akkusg@gmail.com||1 - 2 - 3 - 4 - 
