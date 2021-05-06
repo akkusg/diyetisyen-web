@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <title>Hizmetlerimiz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    section.pricing {
+
+
+}
+
+.pricing .card {
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.pricing hr {
+  margin: 1.5rem 0;
+}
+
+.pricing .card-title {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.pricing .card-price {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.pricing .card-price .period {
+  font-size: 0.8rem;
+}
+
+.pricing ul li {
+  margin-bottom: 1rem;
+}
+
+.pricing .text-muted {
+  opacity: 0.7;
+}
+
+.pricing .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+/* Hover Effects on Card */
+
+@media (min-width: 992px) {
+  .pricing .card:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+  .pricing .card:hover .btn {
+    opacity: 1;
+  }
+}
+  </style>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+<!-- Links -->
+  <ul class="navbar-nav">
+      <!-- Navbar text-->
+    <li class="nav-item">
+      <a class="nav-link" href="/">Diyet Uzmanı</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/hakkimizda">Hakkımızda</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="/hizmetlerimiz">Hizmetlerimiz</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link" href="/iletisim">İletişim</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/mesajlar">Mesajlar</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/cikis"> Merhaba {{kullanici}} - Çıkış yap</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div class="container-fluid">
+  <h1>Paketler</h1>
+
+
+<section class="pricing py-5">
+  <div class="container">
+    <div class="row">
+
+
+      {%for paket in paketler%}
+      <!-- Başlangıç Paketi -->
+      <div class="col-lg-4">
+        <div class="card mb-5 mb-lg-0">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">{{paket["paketadi"]}}</h5>
+            <h6 class="card-price text-center">{{paket["fiyat"]}}₺<span class="period">/aylık</span></h6>
+            <hr>
+            <ul class="fa-ul">
+              {%for ic in paket["icerik"]%}
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ic}}</li>
+              {%endfor%}
+            </ul>
+            <a href="#" class="btn btn-block btn-primary text-uppercase">Satın Al</a>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+
+</div>
+</body>
+</html>

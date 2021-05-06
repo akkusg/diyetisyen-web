@@ -11,15 +11,18 @@ mydb = myclient["INP102"]
 mesajlar_tablosu = mydb["mesajlar"]
 kullanicilar_tablosu = mydb["kullanicilar"]
 oturum_acilis_tablosu = mydb["oturum_acilis"]
-
+paketler_tablosu = mydb["paketler"]
 
 @app.route('/')
 def baslangic():
     if 'kullanici' not in session:
         return redirect("/giris", code=302)
     else:
-        kullanici = session["kullanici"]
-        return render_template("anasayfa.html", hesaplama_mesaji="", kullanici=kullanici)
+        kayit = session["kullanici"]
+        adsoyad="Bilinmiyor"
+        if "adsoyad" in kayit:
+            adsoyad=kayit["adsoyad"]
+        return render_template("anasayfa.html", kullanici=adsoyad, hesaplama_mesaji="")
 
 
 @app.route('/giris', methods=['GET','POST'])
@@ -30,7 +33,9 @@ def giris():
         kayit = kullanicilar_tablosu.find_one({"kullanici": kullanici})
         if kayit:
             if sifre == kayit["sifre"]:
-                session["kullanici"] = kullanici
+                del kayit['_id']
+                del kayit['sifre']
+                session["kullanici"] = kayit
                 oturum_acilis_tablosu.insert_one({"kullanici": kullanici, "zaman": datetime.datetime.now()})
                 return redirect("/", code=302)
             else:
@@ -137,6 +142,22 @@ def hesapla():
             renk = "danger"
             link_var = True
     return render_template("anasayfa.html", hesaplama_mesaji=hesaplama_mesaji, boy=boy, kilo=kilo, renk=renk, link_var=link_var)
+
+
+
+@app.route('/hizmetlerimiz')
+def hizmetlerimiz():
+    if 'kullanici' not in session:
+        return redirect("/giris", code=302)
+    else:
+        kayit = session["kullanici"]
+        adsoyad="Bilinmiyor"
+        if "adsoyad" in kayit:
+            adsoyad=kayit["adsoyad"]
+
+        paketler = paketler_tablosu.find()
+
+        return render_template("hizmetlerimiz.html", kullanici=adsoyad, paketler=paketler)
 
 
 if __name__ == "__main__":
