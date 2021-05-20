@@ -97,6 +97,9 @@
     <li class="nav-item">
       <a class="nav-link" href="/mesajlar">Mesajlar</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sepet">Sepet</a>
+    </li>
   </ul>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
@@ -128,7 +131,12 @@
               <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ic}}</li>
               {%endfor%}
             </ul>
-            <a href="#" class="btn btn-block btn-primary text-uppercase">Satın Al</a>
+            <form action="/sepeteekle" method="post">
+              <input type="hidden" id="paket_id" name="paket_id" value='{{paket["_id"]}}'>
+              <input type="hidden" id="paketadi" name="paketadi" value='{{paket["paketadi"]}}'>
+              <input type="hidden" id="fiyat" name="fiyat" value='{{paket["fiyat"]}}'>
+            <button type="submit" class="btn btn-block btn-primary text-uppercase">Sepete Ekle</button>
+            </form>
           </div>
         </div>
       </div>
